@@ -1,0 +1,21 @@
+# ---- 依赖与构建产物 ----
+node_modules/
+frontend/h5/dist/
+frontend/admin/dist/
+dist_package/
+
+# ---- 本机/服务器私有配置（提交 .env.example 模板）----
+backend/.env
+.env.local
+
+# ---- 运行数据与备份（storage 内容库与 uploads 演示图保留在库内）----
+backup/
+deploy/.runtime/
+*.log
+
+# ---- 开发调试产物 ----
+gui-test-screenshots/
+
+# ---- 系统与杂项 ----
+.DS_Store
+*.zip
