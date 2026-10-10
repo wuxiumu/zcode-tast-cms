@@ -6,7 +6,7 @@ command -v php >/dev/null || fail "需要 PHP"
 [[ -f check.sh && -f backend/public/index.php ]] || fail "缺少入口"
 [[ -f backend/.env.example ]] || fail "缺少 backend/.env.example"
 ok "核心文件齐全"
-grep -n "admin123" backend/config/admin.php && fail "仍含 admin123 注释/口令" || ok "admin 配置无明文口令"
+grep -E "admin123|\$2y\$" backend/config/admin.php && fail "仍含弱口令注释或写死 hash" || ok "admin 仅从环境读 hash"
 php -l backend/config/admin.php >/dev/null
 php -l backend/config/app.php >/dev/null
 ok "PHP lint OK"
