@@ -1,0 +1,15 @@
+/* 管理端全局样式 */
+
+/* 素材编辑页：长表单滚动时「标题 + 保存按钮」吸顶（Header 高 64px） */
+.edit-card > .ant-card-head {
+  position: sticky;
+  top: 64px;
+  z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* 预览抽屉里图片圆角 */
+.material-preview-image {
+  border-radius: 6px;
+}

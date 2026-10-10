@@ -1,0 +1,32 @@
+body {
+  background: #f5f6f8;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.h5-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.h5-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 2px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.h5-row:last-child {
+  border-bottom: none;
+}
+
+.h5-muted {
+  color: #999;
+  font-size: 13px;
+}
+
+.h5-money {
+  color: #ff5b05;
+  font-weight: 600;
+}
