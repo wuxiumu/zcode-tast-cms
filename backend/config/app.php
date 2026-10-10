@@ -13,12 +13,12 @@ return [
 
 
     // JWT
-    'jwt_secret'   => 'sucaiku-dev-secret-change-me',
+    'jwt_secret'   => (string)\App\Support\Env::get('JWT_SECRET', 'sucaiku-dev-secret-change-me'),
     'jwt_ttl_user' => 7 * 86400,   // 用户端 7 天
     'jwt_ttl_admin'=> 12 * 3600,   // 管理端 12 小时
 
     // 模拟短信验证码（接真实短信前所有手机号统一用此码）
-    'mock_sms_code' => '123456',
+    'mock_sms_code' => (string)\App\Support\Env::get('MOCK_SMS_CODE', ''),
 
     // 上传限制
     'upload' => [

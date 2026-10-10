@@ -25,6 +25,18 @@
 - 前端：Vite + React 18 + TS（H5=antd-mobile，Admin=Ant Design 5）
 - 存储：分类/素材 = `storage/*.md`；用户/任务/奖励 = Redis；媒体 = `uploads/`
 
+
+## 环境变量（安全）
+
+复制 `backend/.env.example` → `backend/.env`：设置 `JWT_SECRET`、`ADMIN_PASSWORD_HASH`（仓库已去掉默认 admin123 明文注释与写死账号）。
+
+## 冒烟自检
+
+```bash
+bash scripts/smoke.sh
+# 完整：配置 .env 与 Redis 后 ./check.sh
+```
+
 ## 快速开始
 
 ```bash

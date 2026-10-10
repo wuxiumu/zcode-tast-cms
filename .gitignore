@@ -19,3 +19,5 @@ gui-test-screenshots/
 # ---- 系统与杂项 ----
 .DS_Store
 *.zip
+!.env.example
+backend/!.env.example

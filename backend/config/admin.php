@@ -2,10 +2,17 @@
 
 declare(strict_types=1);
 
-// MVP：管理员账号写死在此。生产请移出代码库或改用数据库。
+use App\Support\Env;
+
+// 管理员 bcrypt hash：请在 backend/.env 设置 ADMIN_PASSWORD_HASH
+// 本地可用: php -r "echo password_hash('your-pass', PASSWORD_BCRYPT), PHP_EOL;"
+// 勿在仓库写死明文口令（原 admin123 已移除）
+$hash = (string)Env::get('ADMIN_PASSWORD_HASH', '');
+$users = [];
+if ($hash !== '') {
+    $users[(string)Env::get('ADMIN_USER', 'admin')] = $hash;
+}
+
 return [
-    'users' => [
-        // admin / admin123
-        'admin' => '$2y$10$caR.Pn3ZtEWaplnikpo72OK3oyctAZC4csnQfNxt6pgGJ1WNCYcbS',
-    ],
+    'users' => $users,
 ];
